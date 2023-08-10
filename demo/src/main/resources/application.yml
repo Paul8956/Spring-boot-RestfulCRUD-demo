@@ -1,0 +1,26 @@
+server:
+  port: 8081
+
+logging:
+  level:
+    root: warn
+    com.lrm: debug
+  file:
+    name: logs/debug.log
+
+spring:
+  datasource:
+    url: jdbc:mariadb://your_domain/your_table?useUnicode=true&characterEncoding=utf-8
+    username: your_username
+    password: "your_password"
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.MariaDBDialect
+  resources:
+    static-locations: classpath:/static/
+    cache-period: 0
